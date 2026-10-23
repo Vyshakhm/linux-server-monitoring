@@ -1,0 +1,20 @@
+groups:
+  - name: linux-monitoring-alerts
+    rules:
+      - alert: HighCPUUsage
+        expr: system_cpu_usage_percent > 85
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU usage is above 85%"
+          description: "The exporter reports CPU usage above 85% for at least one minute."
+
+      - alert: LowDiskSpace
+        expr: (system_disk_free_bytes / system_disk_total_bytes) * 100 < 15
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Root filesystem has less than 15% free space"
+          description: "Check disk usage and remove or rotate unnecessary files."

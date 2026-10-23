@@ -1,0 +1,32 @@
+{
+  "id": null,
+  "uid": "linux-health-starter",
+  "title": "Linux Server Health",
+  "tags": ["linux", "prometheus", "devops"],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "15s",
+  "panels": [
+    {
+      "id": 1, "type": "timeseries", "title": "CPU Usage (%)",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+      "targets": [{"expr": "system_cpu_usage_percent", "legendFormat": "CPU", "refId": "A"}]
+    },
+    {
+      "id": 2, "type": "timeseries", "title": "Available Memory (bytes)",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+      "targets": [{"expr": "system_memory_available_bytes", "legendFormat": "Available memory", "refId": "A"}]
+    },
+    {
+      "id": 3, "type": "timeseries", "title": "Disk Free (bytes)",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8},
+      "targets": [{"expr": "system_disk_free_bytes", "legendFormat": "Free disk", "refId": "A"}]
+    },
+    {
+      "id": 4, "type": "timeseries", "title": "Process Count",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8},
+      "targets": [{"expr": "system_process_count", "legendFormat": "Processes", "refId": "A"}]
+    }
+  ]
+}
